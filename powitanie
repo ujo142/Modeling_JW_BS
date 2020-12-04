@@ -1,6 +1,0 @@
-def powitanie_z_maria():
-    print('')
-    print('*************************************')
-    print('****  Witaj w symulacji wahadła  ****')
-    print('*************************************')
-    print('')
