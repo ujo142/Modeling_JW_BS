@@ -7,10 +7,11 @@ from matplotlib.patches import Circle
 from scipy.integrate import odeint
 from Powitanie import *
 from pozegnanie import *
-from pochodne import *
+import POU
 import matplotlib.animation as animation
 import scipy.integrate as integratefrom
 from numpy import sin, cos
+
 
 
 
@@ -25,15 +26,6 @@ from numpy import sin, cos
 ##              Informacje o wahadła                 ##
 #######################################################
 
-G = 0.000000000066743  # stała grawitacji
-M = 0.0
-R = 0.0
-G1 = 10  # przyspieszenie ziemskie
-G2 = M*G/R**2  # przyspieszenie dowolne, które będzie policzone po podaniu
-L1 = 0.0
-L2 = 0.0
-M1 = 0.0
-M2 = 0.0
 
 # czas
 dt = 0.05  # Interwał czasowy / ilość fps gdy wyświetliny wahadło

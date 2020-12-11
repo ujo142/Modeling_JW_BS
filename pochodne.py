@@ -1,3 +1,17 @@
+from numpy import sin, cos
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+import sys
+import os
+from matplotlib.patches import Circle
+from scipy.integrate import odeint
+import matplotlib.animation as animation
+import scipy.integrate as integratefrom
+
+G = 9.81
+import main
+
 def derivs(stan, t):
     # funkcja która liczy pochodne w punkcie t0
 
@@ -22,3 +36,4 @@ def derivs(stan, t):
                / den2)
 
     return dydx
+print (derivs(0,2))

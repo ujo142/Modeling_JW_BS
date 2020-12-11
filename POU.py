@@ -1,13 +1,14 @@
-def pou():
-    l = input('Podaj długość wahadła: ')
-    m = input('Wpisz masę wahadła:  ')
-    print('Ruch może odbywać się w jednym z podanych ośrodków: bla bla bla')
-    u = input('Napisz który z nich wybierasz: ')
+#def pou():
+    #l = input('Podaj długość wahadła: ')
+    #m = input('Wpisz masę wahadła:  ')
+    #print('Ruch może odbywać się w jednym z podanych ośrodków: bla bla bla')
+    #u = input('Napisz który z nich wybierasz: ')
 
 # opór, masa, długość,
 
 
 # to będzie potrzebne potem, nie usuwaj, plis
+
 G = 0.000000000066743  # stała grawitacji
 M = float(input("Wpisz masę planety na której ma działać wahadło: "))  # masa planety do wyboru
 R = float(input("Wpisz promień planety na której ma działać wahadło: "))  # promień planety do wyboru
@@ -17,6 +18,8 @@ L1 = float(input("Wpisz długość pierwszej części wahadła: "))  # długoś�
 L2 = float(input("Wpisz długość drugiej części wahadła: "))  # długość drugiej części wahadła
 M1 = float(input("Wpisz masę pierwszej części wahadła: "))  # masa pierwszej części wahadła
 M2 = float(input("Wpisz masę drugiej części wahadła: "))  # masa drugiej części wahadła
+
+
 #############################################
 
 
