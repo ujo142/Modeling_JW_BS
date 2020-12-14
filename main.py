@@ -7,9 +7,9 @@ from matplotlib.patches import Circle
 from scipy.integrate import odeint
 from Powitanie import *
 from pozegnanie import *
-from pochodne import *
+import POU
 import matplotlib.animation as animation
-import scipy.integrate as integratefrom
+import scipy.integrate as integrate
 from numpy import sin, cos
 
 
@@ -18,22 +18,48 @@ from numpy import sin, cos
 
 
 
+#######################################################
+##              Liczenie pochodnych                  ##
+#######################################################
 
+def derywata(stan_p, t):
+    # funkcja która liczy pochodne w punkcie t0
+
+    dydx = np.zeros_like(stan_p)  # tablica o nazwie dydx wypełniona zerami wielkości stan
+    dydx[0] = stan_p[1]
+
+    delta = stan_p[2] - stan_p[0]
+    den1 = (M1+M2) * L1 - M2 * L1 * cos(delta) * cos(delta)
+    dydx[1] = ((M2 * L1 * stan_p[1] * stan_p[1] * sin(delta) * cos(delta)
+                + M2 * G * sin(stan_p[2]) * cos(delta)
+                + M2 * L2 * stan_p[3] * stan_p[3] * sin(delta)
+                - (M1+M2) * G * sin(stan_p[0]))
+               / den1)
+
+    dydx[2] = stan_p[3]
+
+    den2 = (L2/L1) * den1
+    dydx[3] = ((- M2 * L2 * stan_p[3] * stan_p[3] * sin(delta) * cos(delta)
+                + (M1+M2) * G * sin(stan_p[0]) * cos(delta)
+                - (M1+M2) * L1 * stan_p[1] * stan_p[1] * sin(delta)
+                - (M1+M2) * G * sin(stan_p[2]))
+               / den2)
+
+    return dydx
 
 
 #######################################################
 ##              Informacje o wahadła                 ##
 #######################################################
-
 G = 0.000000000066743  # stała grawitacji
-M = 0.0
-R = 0.0
+M = 0.01
+R = 0.01
 G1 = 10  # przyspieszenie ziemskie
 G2 = M*G/R**2  # przyspieszenie dowolne, które będzie policzone po podaniu
-L1 = 0.0
-L2 = 0.0
-M1 = 0.0
-M2 = 0.0
+L1 = 0.01
+L2 = 0.01
+M1 = 0.01
+M2 = 0.01
 
 # czas
 dt = 0.05  # Interwał czasowy / ilość fps gdy wyświetliny wahadło
@@ -50,6 +76,8 @@ omega_2 = 0.0  # początkowa wartość prędkości kątowej dla drugiej części
 # stan początkowy
 stan_p = np.radians([alfa_1, omega_1, alfa_2, omega_2])   # stan początkowy wahadła
 
+# rozwiazania równań ruchu
+y = integrate.odeint(derywata, stan_p, t)
 
 
 #######################################################
