@@ -8,7 +8,14 @@ try:
     print("1. WYybór planety")
     print("2. Kreator tworzenia własnej planety")
     n_w = int(input("Twój wybór: "))
-
+    M=1
+    M2=1
+    R=1
+    G1=1
+    G2=1
+    L1=1
+    L2=1
+    M1=1
     if n_w==1:
         print("Wybierz jedną z planet podając numer planety.")
         print("1. Merkury")

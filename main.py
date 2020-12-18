@@ -10,15 +10,14 @@ from pozegnanie import *
 import matplotlib.animation as animation
 import scipy.integrate as integrate
 from numpy import sin, cos
-from control.phaseplot import phase_plot
+
 
 powitanie()
 
 from POU import *
 
-# czas
-dt = 0.05  # Interwał czasowy / ilość fps gdy wyświetliny wahadło
-t = np.arange(0, 30, dt)  # Przestrzeń czasu T |--> R, gdzie R to przestrzeń położeń
+
+
 
 
 #######################################################
