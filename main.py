@@ -116,4 +116,5 @@ ani = animation.FuncAnimation(fig, animate, range(1, len(y)),
 plt.show()
 
 
+
 pozegnanie()
