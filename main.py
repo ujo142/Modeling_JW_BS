@@ -27,7 +27,7 @@ from POU import *
 
 
 # czas
-dt = 0.005  # Interwał czasowy / ilość fps gdy wyświetliny wahadło
+dt = 0.025  # Interwał czasowy / ilość fps gdy wyświetliny wahadło
 t = np.arange(0, 30, dt)  # Przestrzeń czasu T |--> R, gdzie R to przestrzeń położeń
 
 
